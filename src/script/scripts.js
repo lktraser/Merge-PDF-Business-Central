@@ -33,6 +33,3 @@ async function MergePDF(pdfstring) {
   Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("DownloadPDF", pdftoNAV);
 
 }
-
-
-

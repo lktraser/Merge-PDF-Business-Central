@@ -1,8 +1,9 @@
 page 50148 MergePDF
 {
-
-    Caption = 'MergePDF';
-    PageType = Card;
+    ApplicationArea = All;
+    Caption = 'Merge PDFs';
+    PageType = Document;
+    UsageCategory = Lists;
 
     layout
     {
@@ -10,14 +11,14 @@ page 50148 MergePDF
         {
             group(General)
             {
-                usercontrol(pdf; PDF)
+                usercontrol(PDFMerge; PDFMerge)
                 {
                     ApplicationArea = all;
 
                     trigger DownloadPDF(pdfToNav: text)
                     var
-                        TempBlob: Codeunit "Temp Blob";
                         Convert64: Codeunit "Base64 Convert";
+                        TempBlob: Codeunit "Temp Blob";
                         Ins: InStream;
                         Outs: OutStream;
                         Filename: Text;
@@ -39,6 +40,13 @@ page 50148 MergePDF
     {
         area(Processing)
         {
+            action(AutoMerge)
+            {
+                ApplicationArea = All;
+                Caption = 'Auto Merge';
+                RunObject = Codeunit "Merge Test";
+            }
+
             action(SalesOrder)
             {
                 ApplicationArea = All;
@@ -84,7 +92,7 @@ page 50148 MergePDF
                 begin
                     //To check the JsonArray
                     //Message(format(MergePDF.GetJArray()));
-                    CurrPage.pdf.MergePDF(format(MergePDF.GetJArray()));
+                    CurrPage.PDFMerge.MergePDF(format(MergePDF.GetJArray()));
                 end;
             }
             action(Clear)
@@ -104,5 +112,3 @@ page 50148 MergePDF
         MergePDF: Codeunit MergePDF;
         DocumentAdded: Label 'Document %1 added';
 }
-
-
