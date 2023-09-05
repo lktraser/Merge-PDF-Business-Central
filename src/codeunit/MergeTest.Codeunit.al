@@ -1,4 +1,4 @@
-codeunit 50100 "Merge Test"
+codeunit 50200 "Merge Test"
 {
     trigger OnRun()
     var

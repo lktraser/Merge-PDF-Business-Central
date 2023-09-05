@@ -1,4 +1,4 @@
-page 50100 "Test Merge"
+page 50200 "Test Merge"
 {
     Caption = 'Merging PDFs .....';
     PageType = StandardDialog;

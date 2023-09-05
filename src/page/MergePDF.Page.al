@@ -1,4 +1,4 @@
-page 50148 MergePDF
+page 50201 MergePDF
 {
     ApplicationArea = All;
     Caption = 'Merge PDFs';

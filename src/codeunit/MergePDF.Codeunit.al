@@ -1,4 +1,4 @@
-codeunit 50149 MergePDF
+codeunit 50201 MergePDF
 {
     //HOW TO USE
     //Just call the AddReportToMerge or AddBase64pdf functions as many times as needed and later get call the GetJArray function.
@@ -6,11 +6,11 @@ codeunit 50149 MergePDF
 
     procedure AddReportToMerge(ReportID: Integer; RecRef: RecordRef)
     var
+        Convert: Codeunit "Base64 Convert";
         Tempblob: Codeunit "Temp Blob";
         Ins: InStream;
         Outs: OutStream;
         Parameters: Text;
-        Convert: Codeunit "Base64 Convert";
     begin
         Tempblob.CreateInStream(Ins);
         Tempblob.CreateOutStream(Outs);
@@ -39,7 +39,7 @@ codeunit 50149 MergePDF
     end;
 
     var
-        JObjectPDFToMerge: JsonObject;
         JArrayPDFToMerge: JsonArray;
         JObjectPDF: JsonObject;
+        JObjectPDFToMerge: JsonObject;
 }
